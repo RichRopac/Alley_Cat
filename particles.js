@@ -59,8 +59,8 @@ export class Fire extends Particle {
         this.speedX = 1;
         this.speedY = 1;
         this.image = document.getElementById('fire');
-        this.angle = 0;
-        this.va = Math.random() * 0.3 - 0.1;
+        this.angle = 0;     // angle at which fire rotates
+        this.va = Math.random() * 0.3 - 0.1;    //rotation speed of angle
     }
     update(){
         super.update();
@@ -69,7 +69,7 @@ export class Fire extends Particle {
     }
     draw(context){
         context.save();
-        context.translate(this.x, this.y);
+        context.translate(this.x, this.y); //coordinates of player where the fire is drawn
         context.rotate(this.angle);
         context.drawImage(this.image, -this.size * 0.5, -this.size * 0.5, this.size, this.size);
         context.restore();

@@ -48,9 +48,9 @@ export class Running extends State {
   }
   handleInput(input) {
     if (this.game.player.speed > 0) {
-      this.game.particles.unshift(
-        new Dust(
-          this.game,
+      this.game.particles.unshift( //adds one or more elements to the beginning of an array
+        new Dust(                   //and returns the new length of the array
+          this.game,                //adds the new particle and deletes the old one
           this.game.player.x + this.game.player.width * 0.6,
           this.game.player.y + this.game.player.height - 5
         )
