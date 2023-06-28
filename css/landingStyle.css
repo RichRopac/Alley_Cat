@@ -10,7 +10,7 @@
 }
 
 body {
-  background-color: burlywood;
+  background-color: lightblue;
 }
 
 .theLanding {
@@ -131,6 +131,12 @@ h5 {
   max-width: 700px;
 }
 
+#navIcon {
+  width: 40px; 
+  color: blue;
+  justify-content: right;
+}
+
 .menu {
   position: fixed;
   top: 20px;
@@ -142,20 +148,23 @@ h5 {
 }
 
 .menu ul {
-  position: relative;
   list-style: none;
-  border: 1px solid #555;
 }
 
 .menu ul li a {
   text-decoration: none;
-  font-size: 30px;
-  color: white;
+  font-size: 20px;
+  color: black;
+  padding: 10 15 20;
 }
 
 .menu ul li {
-  text-align: center;
-  border-bottom: 1px solid #555;
+  text-align: left;
+
+}
+
+.menu ul li a .fa{
+  padding-right: 15px;
 }
 
 .menu ul li:last-child {
@@ -168,9 +177,12 @@ h5 {
   margin-left: 30px;
 }
 
-.menu ul li a:hover {
+.menu ul li a:hover, .menu .active {
   color: var(--overlay-color);
+  background-color: #F5F5F5;
+  cursor: pointer;
 }
+
 
 .icons a {
   bottom: 0;
@@ -187,7 +199,7 @@ h5 {
   display: flex;
   margin-right: 15px;
   position: absolute;
-  bottom: -550px;
+  bottom: -650px;
 }
 
 @media (max-width: 798px) {
