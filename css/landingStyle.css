@@ -1,0 +1,202 @@
+:root {
+  --overlay-color: #03a9f4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.theLanding {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  color: white;
+  z-index: 2;
+  transition: 1.5s;
+}
+
+.theLanding.active {
+  right: 300px;
+}
+
+.theLanding header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  text-transform: uppercase;
+  font-size: 50px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: url("../icons/menu.png");
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  cursor: pointer;
+}
+
+.toggle.active {
+  background: url("../icons/close.png");
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+}
+
+.theLanding video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-color);
+  mix-blend-mode: overlay;
+}
+
+.text {
+  position: relative;
+  z-index: 10;
+}
+
+.text h2 {
+  font-size: 5em;
+  font-weight: 800;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.text h3 {
+  font-size: 4em;
+  font-weight: 700;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+h3{
+  color:goldenrod;
+}
+
+h4{
+  color: goldenrod;
+  margin-left: 15px;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+h5{
+  color: goldenrod;
+  margin-left: 22px;
+}
+
+.text p {
+  font-size: 1.1em;
+  margin-top: 70px;
+  margin-left: 25px;
+  font-weight: 400;
+  max-width: 700px;
+}
+
+.social {
+  
+  position: absolute;
+  bottom: 0px;
+  z-index: 10;
+  display: flex;
+
+}
+
+.social li {
+  list-style: none;
+}
+
+.social li a {
+  bottom:0;
+  display: inline-block;
+  transform: scale(0.3);
+  transition: 0.5s;
+}
+
+.social li a:hover {
+  transform: scale(0.5) translateY(-15px);
+}
+
+.menu {
+  position: fixed;
+  top: 20px;
+  right: 0;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu ul {
+  position: relative;
+  list-style: none;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  font-size: 30px;
+  color: black;
+ }
+
+
+
+ .menuImg {
+   transform: scale(4);
+   width: 10px;  
+   margin-left: 10px;
+ }
+
+.menu ul li a:hover {
+  color: var(--overlay-color);
+}
+
+@media (max-width: 798px) {
+  .theLanding,
+  .theLanding header {
+    padding: 40px;
+  }
+
+  .text h2 {
+    font-size: 3em;
+  }
+
+  .text h3 {
+    font-size: 3em;
+  }
+
+
+}

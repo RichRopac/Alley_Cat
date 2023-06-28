@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-body{
-background-color: black;
+#landingPage {
+    background-color: white;
 }
 
 #canvas1 {
