@@ -13,12 +13,11 @@ export class Player {
     this.speed = 0;
     this.maxSpeed = 10;
     this.states = [
-      new Sitting(this),
-      new Running(this),
-      new Jumping(this),
-      new Falling(this),
-      new Rolling(this),
-
+      new Sitting(this.game),
+      new Running(this.game),
+      new Jumping(this.game),
+      new Falling(this.game),
+      new Rolling(this.game),
     ];
     this.frameX = 0;
     this.frameY = 0;
@@ -26,8 +25,6 @@ export class Player {
     this.fps = 20;
     this.frameInterval = 1000 / this.fps;
     this.frameTimer = 0;
-    this.currentState = this.states[0];
-    this.currentState.enter();
   }
   update(input, deltaTime) {
     this.checkCollision();
@@ -91,7 +88,7 @@ export class Player {
       ) {
         enemy.markedForDeletion = true;
         this.game.score++;
-       }
+      }
     });
   }
 }

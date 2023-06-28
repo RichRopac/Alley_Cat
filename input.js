@@ -1,14 +1,14 @@
 export class InputHandler {
   constructor(game) {
-    this.game = game; //makes game a class property
+    this.game = game;
     this.keys = [];
     window.addEventListener("keydown", (e) => {
       if (
         (e.key === "ArrowDown" ||
           e.key === "ArrowUp" ||
-          e.key === "ArrowRight" ||
           e.key === "ArrowLeft" ||
-          e.key === "Enter") &&
+          e.key === "ArrowRight" ||
+          e.key === "Control") &&
         this.keys.indexOf(e.key) === -1
       ) {
         this.keys.push(e.key);
@@ -18,9 +18,9 @@ export class InputHandler {
       if (
         e.key === "ArrowDown" ||
         e.key === "ArrowUp" ||
-        e.key === "ArrowRight" ||
         e.key === "ArrowLeft" ||
-        e.key === "Enter"
+        e.key === "ArrowRight" ||
+        e.key === "Control"
       ) {
         this.keys.splice(this.keys.indexOf(e.key), 1);
       }
