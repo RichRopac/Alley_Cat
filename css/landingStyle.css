@@ -6,9 +6,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
+body {
+  background-color: burlywood;
+}
 
 .theLanding {
   position: absolute;
@@ -84,16 +87,15 @@
   mix-blend-mode: overlay;
 }
 
-.text {
-  position: relative;
-  z-index: 10;
-}
-
 .text h2 {
   font-size: 5em;
   font-weight: 800;
   line-height: 1em;
   text-transform: uppercase;
+}
+
+h3 {
+  color: goldenrod;
 }
 
 .text h3 {
@@ -103,20 +105,22 @@
   text-transform: uppercase;
 }
 
-h3{
-  color:goldenrod;
-}
 
-h4{
+h4 {
   color: goldenrod;
   margin-left: 15px;
   font-size: 30px;
   text-transform: uppercase;
 }
 
-h5{
+h5 {
   color: goldenrod;
   margin-left: 22px;
+}
+
+.text {
+  position: relative;
+  z-index: 10;
 }
 
 .text p {
@@ -125,30 +129,6 @@ h5{
   margin-left: 25px;
   font-weight: 400;
   max-width: 700px;
-}
-
-.social {
-  
-  position: absolute;
-  bottom: 0px;
-  z-index: 10;
-  display: flex;
-
-}
-
-.social li {
-  list-style: none;
-}
-
-.social li a {
-  bottom:0;
-  display: inline-block;
-  transform: scale(0.3);
-  transition: 0.5s;
-}
-
-.social li a:hover {
-  transform: scale(0.5) translateY(-15px);
 }
 
 .menu {
@@ -164,24 +144,50 @@ h5{
 .menu ul {
   position: relative;
   list-style: none;
+  border: 1px solid #555;
 }
 
 .menu ul li a {
   text-decoration: none;
   font-size: 30px;
-  color: black;
- }
+  color: white;
+}
 
+.menu ul li {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
 
+.menu ul li:last-child {
+  border-bottom: none;
+}
 
- .menuImg {
-   transform: scale(4);
-   width: 10px;  
-   margin-left: 10px;
- }
+.menuImg {
+  transform: scale(4);
+  width: 10px;
+  margin-left: 30px;
+}
 
 .menu ul li a:hover {
   color: var(--overlay-color);
+}
+
+.icons a {
+  bottom: 0;
+  display: inline-block;
+  transform: scale(0.9);
+  transition: 0.5s;
+}
+
+.icons a:hover {
+  transform: scale(0.9) translateY(-15px);
+}
+
+.icons {
+  display: flex;
+  margin-right: 15px;
+  position: absolute;
+  bottom: -550px;
 }
 
 @media (max-width: 798px) {
@@ -197,6 +203,4 @@ h5{
   .text h3 {
     font-size: 3em;
   }
-
-
 }
