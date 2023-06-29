@@ -29,12 +29,12 @@ export class UI {
     }
     //game over options
     if (this.game.lives === 0) {
-      this.title = "Defeat";
-      this.text = "Continue...?";
-    } else if (this.game.score < 50 && this.game.lives > 0) {
-      this.title = "need more points";
-      this.text = "Try hitting enemies with the special attack";
-    } else if (this.game.score > 50 && this.game.lives > 0) {
+      this.title = "Game Over";
+      this.text = "better luck next time";
+    } else if (this.game.score < 20 && this.game.lives > 0) {
+      this.title = "low score";
+      this.text = "try using special attack";
+    } else if (this.game.score > 20 && this.game.lives > 0) {
       this.title = "Victory";
       this.text = "YOU WON!!!";
     }
