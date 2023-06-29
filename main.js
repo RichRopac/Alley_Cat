@@ -6,7 +6,7 @@ import { UI } from "./UI.js";
 
 window.addEventListener("load", function () {
   /** @type {HTMLCanvasElement} */
-  const canvas = document.getElementById("canvas1");
+  const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
   canvas.width = 1000;
   canvas.height = 700;

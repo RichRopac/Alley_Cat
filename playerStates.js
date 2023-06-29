@@ -22,17 +22,17 @@ export class Sitting extends State {
     super("SITTING", game);
   }
   enter() {
-    this.game.player.frameX = 0;
-    this.game.player.frameY = 5;
-    this.game.player.maxFrame = 4;
+    this.game.player.frameX = 0;  //coordinates in the sheet where image starts X axis
+    this.game.player.frameY = 5;  //coordinates in the sheet where image starts Y axis
+    this.game.player.maxFrame = 4;  //number of animation frames in that sprite sheet
   }
   handleInput(input) {
     if (input.includes("ArrowLeft") || input.includes("ArrowRight")) {
-      this.game.player.setState(states.RUNNING, 1);
+      this.game.player.setState(states.RUNNING, 1); //the 1 here includes the movement speed of background
     } else if (input.includes("ArrowUp")) {
-      this.game.player.setState(states.JUMPING, 1);
+      this.game.player.setState(states.JUMPING, 1); 
     } else if (input.includes("Control")) {
-      this.game.player.setState(states.ROLLING, 2);
+      this.game.player.setState(states.ROLLING, 2); // the 2 is the movement speed of background
     }
   }
 }
@@ -42,9 +42,9 @@ export class Running extends State {
     super("RUNNING", game);
   }
   enter() {
-    this.game.player.frameX = 0;
-    this.game.player.frameY = 3;
-    this.game.player.maxFrame = 8;
+    this.game.player.frameX = 0;  //coordinates of frame in sprite sheet X axis
+    this.game.player.frameY = 3;  //coordinates of frame in sprite sheet Y axis
+    this.game.player.maxFrame = 8;  // number of frames for this animation
   }
   handleInput(input) {
     if (this.game.player.speed > 0) {
@@ -115,7 +115,7 @@ export class Rolling extends State {
     this.game.player.maxFrame = 6;
   }
   handleInput(input) {
-    this.game.particles.unshift(
+    this.game.particles.unshift(  //unshiting / eliminating particles for FIRE
       new Fire(
         this.game,
         this.game.player.x + this.game.player.width * 0.5,
@@ -123,7 +123,7 @@ export class Rolling extends State {
       )
     );
     if (!input.includes("Control") && this.game.player.onGround()) {
-      this.game.player.setState(states.RUNNING, 1);
+      this.game.player.setState(states.RUNNING, 1); //defaults ro running after movement
     } else if (!input.includes("Control") && !this.game.player.onGround()) {
       this.game.player.setState(states.FALLING, 1);
     } else if (
@@ -146,7 +146,7 @@ export class Diving extends State {
     this.game.player.frameX = 0;
     this.game.player.frameY = 6;
     this.game.player.maxFrame = 6;
-    this.game.player.vy = 20;
+    this.game.player.vy = 20;       // makes the down velocity very fast when diving down
   }
   handleInput(input) {
     this.game.particles.unshift(
