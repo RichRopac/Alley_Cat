@@ -29,14 +29,14 @@ export class UI {
     }
     //game over options
     if (this.game.lives === 0) {
-      this.title = "Love at first bite?";
-      this.text = "Nope. Better luck next time!";
-    } else if (this.game.score < 50 && this.game.lives > 0) {
-      this.title = "Are you scared?";
-      this.text = "Be brave next time, they don't bite. Perhaps...";
-    } else if (this.game.score > 50 && this.game.lives > 0) {
-      this.title = "Boo-ya";
-      this.text = "What are creatures of the night afraid of? YOU!!!";
+      this.title = "Game Over";
+      this.text = "better luck next time";
+    } else if (this.game.score < 20 && this.game.lives > 0) {
+      this.title = "low score";
+      this.text = "try using special attack";
+    } else if (this.game.score > 20 && this.game.lives > 0) {
+      this.title = "Victory";
+      this.text = "YOU WON!!!";
     }
     // game over
     if (this.game.gameOver) {
