@@ -1,6 +1,6 @@
 import {
-  Running,
   Sitting,
+  Running,
   Jumping,
   Falling,
   Rolling,
@@ -9,18 +9,26 @@ import {
 } from "./playerStates.js";
 import { CollisionAnimation } from "./collisionAnimation.js";
 import { FloatingMessage } from "./floatingMessages.js";
+
 export class Player {
   constructor(game) {
     this.game = game;
-    this.width = 100;
-    this.height = 91.3;
+    this.width = 123;
+    this.height = 91;
     this.x = 0;
     this.y = this.game.height - this.height - this.game.groundMargin;
     this.vy = 0;
     this.weight = 1;
     this.image = document.getElementById("player");
+    this.frameX = 0;
+    this.frameY = 0;
+    this.maxFrame = 4;
+    this.fps = 20;
+    this.frameInterval = 1000 / this.fps;
+    this.frameTimer = 0;
     this.speed = 0;
     this.maxSpeed = 10;
+    this.currentState = null;
     this.states = [
       new Sitting(this.game),
       new Running(this.game),
@@ -30,35 +38,32 @@ export class Player {
       new Diving(this.game),
       new Hit(this.game),
     ];
-    this.frameX = 0;
-    this.frameY = 0;
-    this.maxFrame = 5;
-    this.fps = 20;
-    this.frameInterval = 1000 / this.fps;
-    this.frameTimer = 0;
   }
   update(input, deltaTime) {
     this.checkCollision();
     this.currentState.handleInput(input);
-    //horizontal movement
+    // horizontal movement
     this.x += this.speed;
     if (input.includes("ArrowRight") && this.currentState !== this.states[6])
-      this.speed = this.maxSpeed; //right movement
-    else if (input.includes("ArrowLeft") && this.currentState !== this.states[6])
-      this.speed = -this.maxSpeed; //left movement
-    else this.speed = 0; //stop moving
-    if (this.x < 0) this.x = 0; //left border
-    if (this.x > this.game.width - this.width)
-      this.x = this.game.width - this.width; //right
-    //vertical movement
+      this.speed = this.maxSpeed;
+    else if (
+      input.includes("ArrowLeft") &&
+      this.currentState !== this.states[6]
+    )
+      this.speed = -this.maxSpeed;
+    else this.speed = 0;
+    // horizontal boundaries
+    if (this.x < 0) this.x = 0;
+    else if (this.x > this.game.width - this.width)
+      this.x = this.game.width - this.width;
+    // vertical movement
     this.y += this.vy;
     if (!this.onGround()) this.vy += this.weight;
     else this.vy = 0;
     //vertical boundaries
-    if (this.y > this.game.height - this.height - this.game.groundMargin) {
+    if (this.y > this.game.height - this.height - this.game.groundMargin)
       this.y = this.game.height - this.height - this.game.groundMargin;
-    }
-    //sprite animation
+    // sprite animation
     if (this.frameTimer > this.frameInterval) {
       this.frameTimer = 0;
       if (this.frameX < this.maxFrame) this.frameX++;
@@ -68,10 +73,8 @@ export class Player {
     }
   }
   draw(context) {
-    // creates the hitbox of the player
-    if (this.game.debug) {
+    if (this.game.debug)
       context.strokeRect(this.x, this.y, this.width, this.height);
-    }
     context.drawImage(
       this.image,
       this.frameX * this.width,
@@ -87,12 +90,11 @@ export class Player {
   onGround() {
     return this.y >= this.game.height - this.height - this.game.groundMargin;
   }
-  setState(states, speed) {
-    this.currentState = this.states[states];
+  setState(state, speed) {
+    this.currentState = this.states[state];
     this.game.speed = this.game.maxSpeed * speed;
     this.currentState.enter();
   }
-
   checkCollision() {
     this.game.enemies.forEach((enemy) => {
       if (
