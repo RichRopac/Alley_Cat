@@ -7,9 +7,9 @@ const container = document.querySelector(".card-container"),
 
 player1.addEventListener("click", () => {
   localStorage.setItem("whichPlayer", "./images/players/player1.png");
-  window.location.href = "../alleyCat.html";
+  window.location.href = "./AlleyCat.html";
 });
 player2.addEventListener("click", () => {
   localStorage.setItem("whichPlayer", "./images/players/player2.png");
-  window.location.href = "../alleyCat.html";
+  window.location.href = "./AlleyCat.html";
 });
