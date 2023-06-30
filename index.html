@@ -1,0 +1,115 @@
+<!-- This Landing Page which provides the menu options to choose from -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/landingStyle.css" />
+    <title>Alley Cat</title>
+  </head>
+  <body>
+    <section class="theLanding">
+      <header>
+        <h2 class="logo">Alley Cats</h2>
+        <div class="toggle"></div>
+      </header>
+
+      <video
+        src="./video/production_id_4247319 (1080p).mp4"
+        muted
+        loop
+        autoplay
+      ></video>
+
+      <div class="overlay"></div>
+
+      <div class="text">
+        <h3>We don't stop playing</h3>
+        <h4>because we grow old, we grow old because we stop playing.</h4>
+        <h5>--GEORGE BERNARD SHAW</h5>
+        <p>
+          "Most of us grew up with video games in the household, either the
+          original Nintendo in the living room or hoarding quarters for that
+          trip to the arcade. And as time moves on, that line of nostalgia will
+          keep moving forward where 'Frogger' gets replaced with Street Fighter
+          2 or Resident Evil 4." --Rob Manuel
+        </p>
+      </div>
+    </section>
+
+    <div class="menu">
+      <ul>
+        <li>
+          <a href="#" class="active"
+            ><i id="navIcon" class="fa fa-home"></i>Home</a
+          >
+        </li>
+        <li>
+          <a href="./gamingNews.html"
+            ><i id="navIcon" class="fa fa-newspaper-o"></i>Gaming News</a
+          >
+        </li>
+        <li>
+          <a href="./topMovies.html"
+            ><i id="navIcon" class="fa fa-film"></i>Top Ranked Movies</a
+          >
+        </li>
+        <li>
+          <a href="./video/AlleyCatDemoVideo.mp4"
+            ><i id="navIcon" class="fa fa-video-camera"></i>Video Demo</a
+          >
+        </li>
+        <li>
+          <a href="./AlleyCat.html"
+            ><i id="navIcon" class="fa fa-gamepad"></i>Play Game</a
+          >
+        </li>
+      </ul>
+      <div class="icons">
+        <a href="https://www.facebook.com/"
+          ><img src="./icons/facebook.png" alt="facebook" class="menuImg"
+        /></a>
+        <a href="https://twitter.com/"
+          ><img src="./icons/twitter.png" alt="twitter.png" class="menuImg"
+        /></a>
+        <a href="https://www.instagram.com/"
+          ><img src="./icons/instagram.png" alt="instagram.png" class="menuImg"
+        /></a>
+        <a href="https://www.linkedin.com/"
+          ><img src="./icons/linkedin.png" alt="linkedin.png" class="menuImg"
+        /></a>
+        <a href="https://www.tiktok.com/"
+          ><img src="./icons/tiktok.png" alt="tiktok.png" class="menuImg"
+        /></a>
+        <a href="https://www.youtube.com/"
+          ><img src="./icons/youtube.png" alt="youtube.png" class="menuImg"
+        /></a>
+      </div>
+    </div>
+
+    <script>
+      const menuToggle = document.querySelector(".toggle");
+      const theLanding = document.querySelector(".theLanding");
+
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        theLanding.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
