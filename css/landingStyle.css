@@ -6,7 +6,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Gloria Hallelujah";
 }
 
 body {
@@ -46,7 +46,7 @@ body {
 
 .logo {
   text-transform: uppercase;
-  font-size: 50px;
+  font-size: 60px;
 }
 
 .toggle {
@@ -88,7 +88,7 @@ body {
 }
 
 .text h2 {
-  font-size: 5em;
+  font-size: 8em;
   font-weight: 800;
   line-height: 1em;
   text-transform: uppercase;
@@ -105,7 +105,6 @@ h3 {
   text-transform: uppercase;
 }
 
-
 h4 {
   color: goldenrod;
   margin-left: 15px;
@@ -116,6 +115,7 @@ h4 {
 h5 {
   color: goldenrod;
   margin-left: 22px;
+  font-size: 30px;
 }
 
 .text {
@@ -132,7 +132,7 @@ h5 {
 }
 
 #navIcon {
-  width: 40px; 
+  width: 40px;
   color: blue;
   justify-content: right;
 }
@@ -160,10 +160,9 @@ h5 {
 
 .menu ul li {
   text-align: left;
-
 }
 
-.menu ul li a .fa{
+.menu ul li a .fa {
   padding-right: 15px;
 }
 
@@ -177,12 +176,12 @@ h5 {
   margin-left: 30px;
 }
 
-.menu ul li a:hover, .menu .active {
+.menu ul li a:hover,
+.menu .active {
   color: var(--overlay-color);
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   cursor: pointer;
 }
-
 
 .icons a {
   bottom: 0;

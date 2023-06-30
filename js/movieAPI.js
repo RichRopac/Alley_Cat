@@ -1,3 +1,5 @@
+// API call for the movie cards, cards are generated with innerHTML calls
+
 const requestURL = "https://imdb-top-100-movies.p.rapidapi.com/";
 const host = "imdb-top-100-movies.p.rapidapi.com";
 const key = "b1d649dcc3msh61f49baa8dbd5adp11761bjsnd7b14d4f4458";

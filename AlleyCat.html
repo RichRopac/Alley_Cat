@@ -1,30 +1,121 @@
+<!-- //Main page to display the game.  There are two canvas' set up to display game information -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alley Cat Game</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/playerCard.css" />
+    <link rel="stylesheet" href="./css/alleyCatStyle.css" />
+  </head>
+  <body>
+    <!-- Canvas for the scores, timer, button, etc. -->
+    <canvas
+      id="scores"
+      width="400"
+      height="500"
+      style="background: black"
+    ></canvas>
+
+    <div class="btn-container">
+      <a href="./playerCard.html" id="pick-a-cat" class="button button--piyo">
+        <div class="button__wrapper">
+          <span class="button__text">Pick A Cat</span>
+        </div>
+        <div class="characterBox">
+          <div class="character wakeup">
+            <div class="character__face"></div>
+          </div>
+          <div class="character wakeup">
+            <div class="character__face"></div>
+          </div>
+          <div class="character">
+            <div class="character__face"></div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" id="play-again" class="button button--hoo">
+        <div class="button__wrapper">
+          <span class="button__text">Play Again</span>
+        </div>
+        <div class="characterBox">
+          <div class="character wakeup">
+            <div class="character__face"></div>
+            <div class="charactor__face2"></div>
+            <div class="charactor__body"></div>
+          </div>
+          <div class="character wakeup">
+            <div class="character__face"></div>
+            <div class="charactor__face2"></div>
+            <div class="charactor__body"></div>
+          </div>
+          <div class="character">
+            <div class="character__face"></div>
+            <div class="charactor__face2"></div>
+            <div class="charactor__body"></div>
+          </div>
+        </div>
+      </a>
+
+      <a href="./index.html" id="quit-game" class="button button--pen">
+        <div class="button__wrapper">
+          <span class="button__text">Quit</span>
+        </div>
+        <div class="characterBox">
+          <div class="character wakeup">
+            <div class="character__face"></div>
+            <div class="charactor__face2"></div>
+          </div>
+          <div class="character wakeup">
+            <div class="character__face"></div>
+            <div class="charactor__face2"></div>
+          </div>
+          <div class="character">
+            <div class="character__face"></div>
+            <div class="charactor__face2"></div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Canvas for the game play display -->
     <canvas id="canvas"></canvas>
 
-    <img id="player"  src="./images/players/player1.png">
-    <img id="layer1" src="images\Backgrounds\Layers\layer-1.png">
-    <img id="layer2" src="images\Backgrounds\Layers\layer-2.png">
-    <img id="layer3" src="images\Backgrounds\Layers\layer-3.png">
-    <img id="layer4" src="images\Backgrounds\Layers\layer-4.png">
-    <img id="layer5" src="images\Backgrounds\Layers\layer-5.png">
-    <img id="layer6" src="images\Backgrounds\Layers\layer-6.png">
-    <img id="theSun" src="images\Backgrounds\Layers\theSun.png">
-    
-    <img id="enemy_fly"         src="images\enemies\enemy_fly.png">
-    <img id="enemy_plant"       src="images\enemies\enemy_plant.png">
-    <img id="enemy_spider_big"  src="images\enemies\enemy_spider_big.png">
-    <img id="fire"              src="images\items\fire.png">
-    <img id="collisionAnimation" src="images\items\boom.png">
-    <img id="lives"              src="images\items\lives.png">
+    <img id="player" src="./images/players/player2.png" />
+    <img id="layer1" src="images\Backgrounds\Layers\layer-1.png" />
+    <img id="layer2" src="images\Backgrounds\Layers\layer-2.png" />
+    <img id="layer3" src="images\Backgrounds\Layers\layer-3.png" />
+    <img id="layer4" src="images\Backgrounds\Layers\layer-4.png" />
+    <img id="layer5" src="images\Backgrounds\Layers\layer-5.png" />
+    <img id="layer6" src="images\Backgrounds\Layers\layer-6.png" />
+    <img id="theSun" src="images\Backgrounds\Layers\theSun.png" />
 
-    <script type="module" src="main.js"></script>
-</body>
+    <img id="enemy_fly" src="images\enemies\enemy_fly.png" />
+    <img id="enemy_plant" src="images\enemies\enemy_plant.png" />
+    <img id="enemy_spider_big" src="images\enemies\enemy_spider_big.png" />
+    <img id="fire" src="images\items\fire.png" />
+    <img id="collisionAnimation" src="images\items\boom.png" />
+    <img id="lives" src="images\Player1\run\skeleton-04_running_00.png" />
+
+    <script type="module" src="./js/main.js"></script>
+    <img id="cc" src="./images/Enemies/CC-PopIn.png" />
+  </body>
 </html>
